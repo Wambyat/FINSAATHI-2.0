@@ -11,13 +11,13 @@ function Register() {
             <h1>Register to the website</h1>
             <br/>
             <label>Name</label>
-            <input type="text" onChange={e => setName(e.target.value)} />
+            <input type="text" onChange={e => setName(e.target.value)}/>
             <br/>
             <label>Email</label>
-            <input type="text" onChange={e => setEmail(e.target.value)} />
+            <input type="text" onChange={e => setEmail(e.target.value)}/>
             <br/>
             <label>Password</label>
-            <input type="password" onChange={e => setPassword(e.target.value)} />
+            <input type="password" onChange={e => setPassword(e.target.value)}/>
             <br/>
             <button>Register</button>
             <br/>

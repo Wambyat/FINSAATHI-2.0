@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Login from './components/Login';
 import Landing from "./components/Landing";
 import CreateCourse from './components/CreateCourse';
@@ -12,10 +12,10 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Landing />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/about" element={<CreateCourse />} />
+                <Route path="/" element={<Landing/>}/>
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/register" element={<Register/>}/>
+                <Route path="/about" element={<CreateCourse/>}/>
             </Routes>
         </Router>
     );
