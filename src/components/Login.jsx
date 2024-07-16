@@ -17,7 +17,7 @@ function Login() {
             <br/>
             <button>Login</button>
             <br/>
-            New here? <a href="/Register">Register</a>
+            New here? <a href="/register">Register</a>
         </div>
     );
 }
