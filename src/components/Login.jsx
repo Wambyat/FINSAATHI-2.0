@@ -10,14 +10,14 @@ function Login() {
             <h1>Login to admin dashboard</h1>
             <br/>
             <label>Email</label>
-            <input type="text" onChange={e => setEmail(e.target.value)} />
+            <input type="text" onChange={e => setEmail(e.target.value)}/>
             <br/>
             <label>Password</label>
-            <input type="password" onChange={e => setPassword(e.target.value)} />
+            <input type="password" onChange={e => setPassword(e.target.value)}/>
             <br/>
             <button>Login</button>
             <br/>
-            New here? <a href="/Register">Register</a>
+            New here? <a href="/register">Register</a>
         </div>
     );
 }
