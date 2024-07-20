@@ -3,7 +3,7 @@ import Login from './components/Login';
 import Landing from "./components/Landing";
 import CreateCourse from './components/CreateCourse';
 import Register from './components/Register';
-import FinancialKnowledgeLevel from './components/Financialknowledgelevel';
+import FinancialKnowledgeLevel from './components/FinancialKnowledgeLevel';
 
 // This file shows how you can do routing in React.
 // Try going to /login, /register, /about, /courses on the website and see how the html changes
