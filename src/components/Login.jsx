@@ -7,7 +7,7 @@ function Login() {
 
     return (
         <div className="login-container">
-            <h1>Login to admin dashboard</h1>
+            <h1>Login To Admin Dashboard</h1>
             <br/>
             <label>Email</label>
             <input type="text" onChange={e => setEmail(e.target.value)}/>
@@ -17,7 +17,7 @@ function Login() {
             <br/>
             <button>Login</button>
             <br/>
-            New here? <a href="/register">Register</a>
+            <h2>New here? <a href="/register">Register</a> </h2>
         </div>
     );
 }

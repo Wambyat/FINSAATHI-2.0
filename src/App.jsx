@@ -17,6 +17,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/about" element={<CreateCourse />} />
+                <Route path="/FinancialKnowledgeLevel" element={<FinancialKnowledgeLevel />} />
             </Routes>
         </Router>
     );

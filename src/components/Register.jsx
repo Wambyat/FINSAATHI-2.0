@@ -21,7 +21,7 @@ function Register() {
             <br/>
             <button>Register</button>
             <br/>
-            Already a user? <a href="/Login">Login</a>
+            <h2>Already a user? <a href="/Login">Login</a></h2>
         </div>
     );
 }
