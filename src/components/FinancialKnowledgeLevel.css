@@ -12,10 +12,10 @@ body {
 .container {
     text-align: center;
     background: #fff;
-    padding: 80px;
+    padding: 5%;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: 90%;
     max-width: 1000px;
     border: 1px solid #f8c7c7;
 }
@@ -24,31 +24,21 @@ h1 {
     color: #e74c3c;
     font-size: 2.5em;
     margin-bottom: 30px;
-    align-self: flex-end;
-    margin-left: 20%;
 }
 
-.test-score {
-    background-color: #e0d1d1;
-    padding: 20px;
-    margin: 40px 2;
-    font-size: 2.5em;
-    color: #e74c3c;
-    border-radius: 5px;
-}
-
-.start-learning {
+.test-score, .start-learning {
     background-color: #e0d1d1;
     padding: 20px;
     margin: 40px 0;
-    font-size: 2.5em;
+    font-size: 1.5em;
     color: #e74c3c;
     border-radius: 5px;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    gap: 20px;
     margin-top: 20px;
 }
 
@@ -56,8 +46,8 @@ h1 {
     background-color: #f8c7c7;
     color: #e74c3c;
     border: none;
-    padding: 30px 60px;
-    font-size: 3.0em;
+    padding: 20px;
+    font-size: 1.5em;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -66,4 +56,43 @@ h1 {
 .level-button:hover {
     background-color: #e74c3c;
     color: #fff;
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    .test-score, .start-learning {
+        font-size: 2em;
+    }
+
+    .buttons {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .level-button {
+        padding: 30px 60px;
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 1024px) {
+    h1 {
+        font-size: 3.5em;
+    }
+
+    .test-score, .start-learning {
+        font-size: 2.5em;
+    }
+
+    .level-button {
+        padding: 30px 60px;
+        font-size: 3em;
+    }
 }
