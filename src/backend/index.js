@@ -12,12 +12,14 @@ const SECRET = 'SECr3t';  // This should be in an environment variable during de
 // Define mongoose schemas
 const userSchema = new mongoose.Schema({
     username: String,
+    email: String,
     password: String,
     purchasedCourses: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}]
 });
 
 const adminSchema = new mongoose.Schema({
     username: String,
+    email: String,
     password: String
 });
 
