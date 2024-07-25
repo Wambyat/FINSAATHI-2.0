@@ -8,7 +8,7 @@ function Register() {
 
     return (
         <div className="register-container">
-            <h1>Register to the website</h1>
+            <h1>Register</h1>
             <br/>
             <label>Name</label>
             <input type="text" onChange={e => setName(e.target.value)}/>
