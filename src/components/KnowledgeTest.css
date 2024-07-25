@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, rgba(238, 170, 163, 1.0), rgba(254, 247, 246, 1.0));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.knowledge-test-container {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.knowledge-test-header {
+    color: #dc493a;
+    margin-bottom: 10px;
+    align-self: flex-end;
+}
+
+.question-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #dc493a;
+    background: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.question-area {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 10px; /* To account for scrollbar space */
+}
+
+.answer-button {
+    color: gray;
+}
+
+.answer-button-selected {
+    color: red;
+}
+
+.answer-feedback {
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-size: 1.5rem;
+}
+
+.answer-feedback.correct {
+    background: lightgreen;
+    color: green;
+}
+
+.answer-feedback.wrong {
+    background: lightcoral;
+    color: red;
+}
+
+.next-button {
+    background-color: #dc493a;
+    color: white;
+    margin-top: 20px;
+}
+
+.next-button:hover {
+    background-color: #c83e31;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .knowledge-test-container {
+        padding: 15px;
+        width: 95%;
+        height: 90%;
+    }
+
+    .knowledge-test-header {
+        font-size: 1.5rem;
+    }
+
+    .question-counter {
+        font-size: 0.875rem;
+        padding: 3px 7px;
+    }
+
+    .answer-feedback {
+        font-size: 1.25rem;
+    }
+
+    .next-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .knowledge-test-container {
+        padding: 10px;
+        width: 100%;
+        height: 95%;
+    }
+
+    .knowledge-test-header {
+        font-size: 1.25rem;
+    }
+
+    .question-counter {
+        font-size: 0.75rem;
+        padding: 2px 5px;
+    }
+
+    .answer-feedback {
+        font-size: 1rem;
+    }
+
+    .next-button {
+        font-size: 0.875rem;
+        padding: 6px 12px;
+    }
+}
