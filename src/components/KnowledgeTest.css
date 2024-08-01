@@ -9,22 +9,22 @@ body {
     align-items: center;
     padding-top: 10px;
     box-sizing: border-box;
-  }
-  
-  .knowledge-test-wrapper {
+}
+
+.knowledge-test-wrapper {
     width: 100%;
     max-width: 1200px;
     text-align: center;
     margin-bottom: 250px;
-  }
-  
-  .knowledge-test-header {
+}
+
+.knowledge-test-header {
     color: #dc493a;
     margin-bottom: 10px;
     font-size: 2.5rem;
-  }
-  
-  .knowledge-test-container {
+}
+
+.knowledge-test-container {
     position: relative;
     background: white;
     padding: 30px;
@@ -39,9 +39,9 @@ body {
     flex-direction: column;
     margin-top: 80px;
     align-self: center;
-  }
-  
-  .question-counter {
+}
+
+.question-counter {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -49,102 +49,102 @@ body {
     background: white;
     border-radius: 20px;
     padding: 5px 10px;
-  }
-  
-  .question-area {
+}
+
+.question-area {
     flex: 1;
     overflow-y: auto;
     margin-bottom: 20px;
     padding-right: 10px;
     font-size: 1.5rem;
-  }
-  
-  .answer-button {
+}
+
+.answer-button {
     color: gray;
     font-size: 1.25rem;
     display: block;
     margin: 10px 0;
     text-align: left;
-  }
-  
-  .answer-button-selected {
+}
+
+.answer-button-selected {
     color: red;
-  }
-  
-  .answer-feedback {
+}
+
+.answer-feedback {
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
     font-size: 2.5rem;
-  }
-  
-  .answer-feedback.correct {
+}
+
+.answer-feedback.correct {
     background: lightgreen;
     color: green;
-  }
-  
-  .answer-feedback.wrong {
+}
+
+.answer-feedback.wrong {
     background: lightcoral;
     color: red;
-  }
-  
-  .next-button {
+}
+
+.next-button {
     background-color: #dc493a;
     color: white;
     margin-top: 30px;
     font-size: 2.25rem;
     padding: 10px 20px;
-  }
-  
-  .next-button:hover {
+}
+
+.next-button:hover {
     background-color: #c83e31;
-  }
-  
-  .score-display {
+}
+
+.score-display {
     text-align: center;
     font-size: 1.5rem;
-  }
-  
-  .score-display h4 {
+}
+
+.score-display h4 {
     margin-bottom: 10px;
     font-size: 2rem;
-  }
-  
-  .score-display h5 {
+}
+
+.score-display h5 {
     margin: 5px 0;
-  }
-  
-  /* Single Responsive Styles */
-  @media (max-width: 1024px) {
+}
+
+/* Single Responsive Styles */
+@media (max-width: 1024px) {
     .knowledge-test-container {
-      padding: 15px;
-      max-width: 95%;
+        padding: 15px;
+        max-width: 95%;
     }
-  
+
     .knowledge-test-header {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
-  
+
     .question-counter {
-      font-size: 1rem;
-      padding: 3px 7px;
+        font-size: 1rem;
+        padding: 3px 7px;
     }
-  
+
     .question-area {
-      font-size: 1.25rem;
+        font-size: 1.25rem;
     }
-  
+
     .answer-button {
-      font-size: 1.25rem;
+        font-size: 1.25rem;
     }
-  
+
     .answer-feedback {
-      font-size: 1.25rem;
+        font-size: 1.25rem;
     }
-  
+
     .next-button {
-      font-size: 1rem;
-      padding: 8px 16px;
+        font-size: 1rem;
+        padding: 8px 16px;
     }
-  }
+}
   

@@ -55,6 +55,7 @@ const quizSchema = new mongoose.Schema({
     }]
 });
 
+
 // Define mongoose models
 const User = mongoose.model('User', userSchema);
 const Admin = mongoose.model('Admin', adminSchema);
@@ -62,12 +63,11 @@ const Course = mongoose.model('Course', courseSchema);
 const Lesson = mongoose.model('Lesson', lessonSchema);
 const Quiz = mongoose.model('Quiz', quizSchema);
 
+
 const authenticateJwt = (req, res, next) => {
     const authHeader = req.headers.authorization;
-    // console.log(authHeader);
     if (authHeader) {
         const token = authHeader.split(' ')[1];
-        // console.log(token);
         jwt.verify(token, SECRET, (err, user) => {
             if (err) {
                 return res.sendStatus(403);
@@ -80,10 +80,12 @@ const authenticateJwt = (req, res, next) => {
     }
 };
 
+
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://sohoxic:iisc@deez-nu.eyz6xx9.mongodb.net/', {
-    dbName: "courses"
+    dbName: "Saathi"
 });
+
 
 // Admin login and signup routes
 app.post('/admin/signup', (req, res) => {
@@ -106,13 +108,13 @@ app.post('/admin/signup', (req, res) => {
 });
 
 app.post('/admin/login', async (req, res) => {
-    const { username, password } = req.body;
-    const admin = await Admin.findOne({ username, password });
+    const {username, password} = req.body;
+    const admin = await Admin.findOne({username, password});
     if (admin) {
-        const token = jwt.sign({ username, role: 'admin' }, SECRET, { expiresIn: '1h' });
-        res.json({ message: 'Logged in successfully', token });
+        const token = jwt.sign({username, role: 'admin'}, SECRET, {expiresIn: '1h'});
+        res.json({message: 'Logged in successfully', token});
     } else {
-        res.status(403).json({ message: 'Invalid username or password' });
+        res.status(403).json({message: 'Invalid username or password'});
     }
 });
 
@@ -159,8 +161,7 @@ app.put('/admin/lessons/:lessonId', authenticateJwt, async (req, res) => {
     const lesson = await Lesson.findByIdAndUpdate(req.params.lessonId, req.body, {new: true});
     if (lesson) {
         res.json({message: 'Lesson updated successfully'});
-    }
-    else {
+    } else {
         res.status(404).json({message: 'Lesson not found'});
     }
 });
@@ -226,13 +227,13 @@ app.post('/users/signup', async (req, res) => {
 });
 
 app.post('/users/login/', async (req, res) => {
-    const { username, password } = req.body;
-    const user = await User.findOne({ username, password });
+    const {username, password} = req.body;
+    const user = await User.findOne({username, password});
     if (user) {
-        const token = jwt.sign({ username, role: 'user' }, SECRET, { expiresIn: '1h' });
-        res.json({ message: 'Logged in successfully', token });
+        const token = jwt.sign({username, role: 'user'}, SECRET, {expiresIn: '1h'});
+        res.json({message: 'Logged in successfully', token});
     } else {
-        res.status(403).json({ message: 'Invalid username or password' });
+        res.status(403).json({message: 'Invalid username or password'});
     }
 });
 
@@ -240,14 +241,14 @@ app.post('/users/login/', async (req, res) => {
 // User course routes
 app.get('/users/courses', authenticateJwt, async (req, res) => {
     try {
-        const user = await User.findOne({username: req.user.username }).populate('purchasedCourses');
+        const user = await User.findOne({username: req.user.username}).populate('purchasedCourses');
         if (user) {
-            res.json({ purchasedCourses: user.purchasedCourses || [] });
+            res.json({purchasedCourses: user.purchasedCourses || []});
         } else {
-            res.status(403).json({ message: 'User not found' });
+            res.status(403).json({message: 'User not found'});
         }
     } catch (error) {
-        res.status(500).json({ message: 'Internal server error', error });
+        res.status(500).json({message: 'Internal server error', error});
     }
 });
 
@@ -256,9 +257,9 @@ app.get('user/courses/:courseId', authenticateJwt, async (req, res) => {
     const user = await User.findOne({username: req.user.username}).populate('purchasedCourses');
     const course = await Course.findById(req.params.courseId);
     if (course) {
-        res.json({ course });
+        res.json({course});
     } else {
-        res.status(404).json({ message: 'Course not found' });
+        res.status(404).json({message: 'Course not found'});
     }
 });
 
@@ -280,7 +281,7 @@ app.post('/users/courses/:courseId', authenticateJwt, async (req, res) => {
 });
 
 
-// Courses endpoints
+// Courses endpoints, these should be used only for testing afaik, probably should delete before deploying.
 app.get('/courses', async (req, res) => {
     const courses = await Course.find({published: true});
     res.json({courses});
@@ -299,5 +300,6 @@ app.get('/courses/:courseId/quizzes', async (req, res) => {
     const quizzes = await Quiz.find({course: req.params.courseId});
     res.json({quizzes});
 });
+
 
 app.listen(3000, () => console.log('Server running on port 3000'));
