@@ -2,6 +2,7 @@ const express = require('express');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const axios = require('axios');
 const app = express();
 
 app.use(express.json());
@@ -55,6 +56,20 @@ const quizSchema = new mongoose.Schema({
     }]
 });
 
+const languageSchema = new mongoose.Schema({
+    name: String
+});
+
+const indiaStatesSchema = new mongoose.Schema({
+    name: String,
+    code: String,
+    suggestedLanguages: [{type: mongoose.Schema.Types.ObjectId, ref: 'Language'}]
+});
+
+const locationSchema = new mongoose.Schema({
+    account_number: String,
+    key: String
+});
 
 // Define mongoose models
 const User = mongoose.model('User', userSchema);
@@ -62,7 +77,9 @@ const Admin = mongoose.model('Admin', adminSchema);
 const Course = mongoose.model('Course', courseSchema);
 const Lesson = mongoose.model('Lesson', lessonSchema);
 const Quiz = mongoose.model('Quiz', quizSchema);
-
+const Language = mongoose.model('Language', languageSchema);
+const IndiaStates = mongoose.model('IndiaStates', indiaStatesSchema);
+const Location = mongoose.model('Location', locationSchema);
 
 const authenticateJwt = (req, res, next) => {
     const authHeader = req.headers.authorization;
@@ -301,5 +318,29 @@ app.get('/courses/:courseId/quizzes', async (req, res) => {
     res.json({quizzes});
 });
 
+
+// Get user state using IP. Send ip in the body.
+app.post('/suggestedLanguage', async (req, res) => {
+    // get the first account number and key in the database
+    const location = await Location.findOne({});
+    console.log(location);
+    const account_number = location.account_number;
+    const key = location.key;
+    const ip = req.body.ip;
+    axios.get(`https://geolite.info/geoip/v2.1/city/${ip}?pretty`, {
+        auth: {
+            username: account_number,
+            password: key
+        }
+    })
+        .then(async response => {
+            const state_code = response.data.subdivisions[0].iso_code;
+            const state = await IndiaStates.findOne({code: state_code}).populate('suggestedLanguages');
+            res.json({suggestedLanguages: state.suggestedLanguages, state: state.name, state_code: state_code});
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+});
 
 app.listen(3000, () => console.log('Server running on port 3000'));
