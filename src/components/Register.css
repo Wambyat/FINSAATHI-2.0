@@ -20,7 +20,7 @@ body {
 }
 
 .register-container h1 {
-    font-size: 2rem;
+    font-size: 4rem;
     margin-bottom: 10px;
     color: #dc493a;
     align-self: flex-end;
@@ -74,7 +74,7 @@ body {
     }
 
     .register-container h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .register-container label {

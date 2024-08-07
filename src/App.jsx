@@ -5,6 +5,7 @@ import CreateCourse from './components/CreateCourse';
 import Register from './components/Register';
 import FinancialKnowledgeLevel from './components/FinancialKnowledgeLevel';
 import KnowledgeTest from './components/KnowledgeTest';
+import BasicLevelUnits from './components/BasicLevelUnits';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                 <Route path="/about" element={<CreateCourse/>}/>
                 <Route path="/FinancialKnowledgeLevel" element={<FinancialKnowledgeLevel/>}/>
                 <Route path="/KnowledgeTest" element={<KnowledgeTest/>}/>
+                <Route path="/BasicLevelUnits" element={<BasicLevelUnits/>}/>
             </Routes>
         </Router>
     );
