@@ -1,69 +1,142 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    background: linear-gradient(to right, rgba(238, 170, 163, 1.0), rgba(254, 247, 246, 1.0));
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, rgba(238, 170, 163, 1.0), rgba(254, 247, 246, 1.0));
+}
+
+.lesson-page {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.header h1 {
+  color: #d22626; /* Red color */
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  width: 150%;
+  margin: 20px 0;
+  padding: 30px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content p {
+  font-size: 2.5rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.tts-controls {
+  display: flex;
+  gap: 15px; /* Add space between buttons */
+  margin-top: 10px;
+}
+
+.tts-button {
+  background-color: #f56c6c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tts-button:hover {
+  background-color: #e05555;
+}
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Aligns the button to the right */
+  padding: 10px 0;
+  margin-top: 20px;
+}
+
+.next-button {
+  background-color: #f56c6c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.next-button:hover {
+  background-color: #e05555;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 991px) {
+  .header h1 {
+    font-size: 2rem;
   }
-  
-  .container {
-    text-align: center;
-    background-color: white;
-    border-radius: 8px;
-    padding: 40px;
-    width: 800%;
-    max-width: 1000px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left: -15%;
+  .content p {
+    font-size: 1.5rem;
   }
-  
-  .level {
-    color: #c0392b;
-    margin: 0;
+  .next-button, .tts-button {
+    font-size: 1.3rem;
+    padding: 8px 18px;
   }
-  
-  .select-unit {
-    color: #e74c3c;
-    font-size: 2.5em;
-    margin: 30px 0;
+}
+
+@media (max-width: 767px) {
+  .header h1 {
+    font-size: 1.75rem;
   }
-  
-  .buttons-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+  .content p {
+    font-size: 1.3rem;
   }
-  
-  .unit-button {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 20px 40px;
-    margin: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    flex: 1 1 45%;
-    font-size: 2em;
+  .next-button, .tts-button {
+    font-size: 1.1rem;
+    padding: 8px 16px;
   }
-  
-  .unit-button:hover {
-    background-color: #d62c1a;
+  .content {
+    padding: 20px;
   }
-  
-  .next-button {
-    background-color: #c0392b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-top: 20px;
-    border-radius: 20px;
-    cursor: pointer;
+}
+
+@media (max-width: 575px) {
+  .header h1 {
+    font-size: 1.5rem;
   }
-  
-  .next-button:hover {
-    background-color: #b02a21;
+  .content p {
+    font-size: 1.1rem;
   }
-  
+  .next-button, .tts-button {
+    font-size: 1rem;
+    padding: 6px 12px;
+  }
+  .content {
+    padding: 15px;
+  }
+}
