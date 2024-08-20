@@ -11,7 +11,7 @@ function Login() {
         e.preventDefault();
         setErrorMessage(null); // Clear any previous errors
         const data = {
-            username: email,
+            username:email,
             password: password
         };
         try {

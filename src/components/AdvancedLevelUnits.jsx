@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './BasicLevelUnits.css';
+import './AdvancedLevelUnits.css';
 
-function BasicLevelUnits() {
+function AdvancedLevelUnits() {
   const [selectedUnit, setSelectedUnit] = useState(null);
 
   const handleNext = () => {
@@ -14,17 +14,17 @@ function BasicLevelUnits() {
 
   return (
     <div className="container">
-      <h1 className="level">Basic Level</h1>
+      <h1 className="level">Advanced Level</h1>
       <p className="select-unit">Select Unit</p>
       <div className="buttons-container">
         <button className="unit-button" onClick={() => setSelectedUnit('Unit 1')}>Unit 1</button>
         <button className="unit-button" onClick={() => setSelectedUnit('Unit 2')}>Unit 2</button>
         <button className="unit-button" onClick={() => setSelectedUnit('Unit 3')}>Unit 3</button>
-        <button className="unit-button" onClick={() => setSelectedUnit('Unit 4')}>Pre and Post-Retirement Products</button>
+        <button className="unit-button" onClick={() => setSelectedUnit('Unit 4')}>Unit 4</button>
       </div>
       <button className="next-button" onClick={handleNext}>NEXT</button>
     </div>
   );
 }
 
-export default BasicLevelUnits;
+export default AdvancedLevelUnits;
