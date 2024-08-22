@@ -9,7 +9,9 @@ function CreateCourse() {
 
     const handleCreateCourse = async () => {
         try {
-            const response = await axios.post('/admin/courses', {
+            // set authenticateJWT header from localstorage "Token"
+            axios.defaults.headers.common['authenticateJWT'] = localStorage.getItem('token');
+            const response = await axios.post('http://localhost:3000/admin/courses/', {
                 title,
                 description,
                 price,

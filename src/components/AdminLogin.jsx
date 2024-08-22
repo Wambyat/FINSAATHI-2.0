@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import "./Login.css";
+import "./AdminLogin.css";
 import axios from 'axios';
 
 function Login() {
@@ -17,14 +17,14 @@ function Login() {
             password: password
         };
         try {
-            const response = await axios.post('http://localhost:3000/users/login/', data);
+            const response = await axios.post('http://localhost:3000/admin/login/', data);
             console.log('Login successful:', response.data);
-            // automatically go to /FinancialKnowledgeLevel
+            localStorage.setItem('token', response.data.token);
+            console.log('Token:', localStorage.getItem('token'));
             setSuccessMessage("Logged in Successfully as "+data.username+". Taking you to your dashboard.");
             setTimeout(() => {
-                window.location.href = "/FinancialKnowledgeLevel";
+                window.location.href = "/CreateCourse";
             }, 1500);
-            // Handle successful login (e.g., store token, redirect)
         } catch (error) {
             console.error('Login error:', error.response.data);
             setErrorMessage(error.response.data.message || "Login failed"); // Set error message
@@ -33,7 +33,7 @@ function Login() {
 
     return (
         <div className="login-container">
-            <h1>Login To Student Dashboard</h1>
+            <h1>Login To Admin Dashboard</h1>
             <br/>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {successMessage && <p className="success-message">{successMessage}</p>}
@@ -45,7 +45,6 @@ function Login() {
             <br/>
             <button onClick={handleLogin}>Login</button>
             <br/>
-            <h2>New here? <a href="/register">Register</a></h2>
         </div>
     );
 }

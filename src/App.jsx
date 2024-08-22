@@ -11,6 +11,7 @@ import BasicUnit4 from './components/BasicUnit4';
 import B4P1 from './components/B4P1';
 import B4P2 from './components/B4P2';
 import B4P3 from './components/B4P3';
+import AdminLogin from "./components/AdminLogin";
 
 function App() {
     return (
@@ -18,8 +19,10 @@ function App() {
             <Routes>
                 <Route path="/" element={<Landing/>}/>
                 <Route path="/login" element={<Login/>}/>
+                <Route path={"/AdminLogin"} element={<AdminLogin/>}/>
                 <Route path="/register" element={<Register/>}/>
-                <Route path="/about" element={<CreateCourse/>}/>
+                <Route path="/AdminRegister" element={<Register/>}/>
+                <Route path="/CreateCourse" element={<CreateCourse/>}/>
                 <Route path="/FinancialKnowledgeLevel" element={<FinancialKnowledgeLevel/>}/>
                 <Route path="/KnowledgeTest" element={<KnowledgeTest/>}/>
                 <Route path="/BasicLevelUnits" element={<BasicLevelUnits/>}/>
