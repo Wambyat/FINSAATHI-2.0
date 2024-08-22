@@ -15,8 +15,8 @@ const FinancialKnowledgeLevel = ({ score }) => {
 
     return (
         <div>
-            <h1>FINANCIAL KNOWLEDGE LEVEL</h1>
             <div className="container">
+            <h1>FINANCIAL KNOWLEDGE LEVEL</h1>
                 <div className="test-score">Test Score: {score}/10</div>
                 <div className="start-learning">
                     {score > 8 ? 'Choose Advanced Level And Start Learning' : 'Choose Basic Level And Start Learning'}

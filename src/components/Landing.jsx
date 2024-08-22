@@ -30,30 +30,6 @@ function Landing() {
                                 <li><strong>Response:</strong> Access is granted if details match, or an error is shown
                                     if they don't.
                                 </li>
-                                <li><strong>Response:</strong> Access is granted if details match, or an error is shown
-                                    if they don't.
-                                </li>
-                                <li><strong>Response:</strong> Access is granted if details match, or an error is shown
-                                    if they don't.
-                                </li>
-                                <li><strong>Response:</strong> Access is granted if details match, or an error is shown
-                                    if they don't.
-                                </li>
-                                <li><strong>Response:</strong> Access is granted if details match, or an error is shown
-                                    if they don't.
-                                </li>
-                                <li><strong>Response:</strong> Access is granted if details match, or an error is shown
-                                    if they don't.
-                                </li>
-                                <li><strong>Response:</strong> Access is granted if details match, or an error is shown
-                                    if they don't.
-                                </li>
-                                <li><strong>Response:</strong> Access is granted if details match, or an error is shown
-                                    if they don't.
-                                </li>
-                                <li><strong>Response:</strong> Access is granted if details match, or an error is shown
-                                    if they don't.
-                                </li>
                             </ul>
                         </div>
 
