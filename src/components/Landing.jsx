@@ -15,7 +15,7 @@ function Landing() {
                     </div>
                 </div>
                 <div className="right-panel">
-                    <div className="content">
+                    <div className="content-landing">
                         <div className="authentication-info">
                             <h2>Understanding Login Authentication</h2>
                             <p>
