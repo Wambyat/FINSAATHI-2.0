@@ -1,15 +1,17 @@
 import React, {useState} from "react";
 import "./Login.css";
-import axios from 'axios'; // Assuming axios is installed
+import axios from 'axios';
 
 function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState(null);
+    const [successMessage, setSuccessMessage] = useState(null);
 
     const handleLogin = async (e) => {
         e.preventDefault();
         setErrorMessage(null); // Clear any previous errors
+        setSuccessMessage(null); // Clear any previous success messages
         const data = {
             username:email,
             password: password
@@ -17,6 +19,11 @@ function Login() {
         try {
             const response = await axios.post('http://localhost:3000/users/login/', data);
             console.log('Login successful:', response.data);
+            // automatically go to /FinancialKnowledgeLevel
+            setSuccessMessage("Logged in Successfully as "+data.username+". Taking you to your dashboard.");
+            setTimeout(() => {
+                window.location.href = "/FinancialKnowledgeLevel";
+            }, 1500);
             // Handle successful login (e.g., store token, redirect)
         } catch (error) {
             console.error('Login error:', error.response.data);
@@ -29,6 +36,7 @@ function Login() {
             <h1>Login To Admin Dashboard</h1>
             <br/>
             {errorMessage && <p className="error-message">{errorMessage}</p>}
+            {successMessage && <p className="success-message">{successMessage}</p>}
             <label>Email</label>
             <input type="text" onChange={e => setEmail(e.target.value)}/>
             <br/>

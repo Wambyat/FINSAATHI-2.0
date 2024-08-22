@@ -231,12 +231,12 @@ app.delete('/admin/quizzes/:quizId', authenticateJwt, async (req, res) => {
 
 // User login and signup routes
 app.post('/users/signup', async (req, res) => {
-    const {username, password} = req.body;
+    const {username, email, password} = req.body;
     const user = await User.findOne({username});
     if (user) {
         res.status(403).json({message: 'User already exists'});
     } else {
-        const newUser = new User({username, password});
+        const newUser = new User({username, email, password});
         await newUser.save();
         const token = jwt.sign({username, role: 'user'}, SECRET, {expiresIn: '1h'});
         res.json({message: 'User created successfully', token});
