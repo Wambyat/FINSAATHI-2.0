@@ -1,7 +1,9 @@
 import React, {useState} from "react";
 import axios from 'axios';
+import {useAdminAuthRedirect} from "../hooks/AuthRedirect";
 
 function CreateCourse() {
+    useAdminAuthRedirect();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
@@ -9,8 +11,9 @@ function CreateCourse() {
 
     const handleCreateCourse = async () => {
         try {
-            // set authenticateJWT header from localstorage "Token"
-            axios.defaults.headers.common['authenticateJWT'] = localStorage.getItem('token');
+            const token = localStorage.getItem('token');
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
+            console.log('Token:', localStorage.getItem('token'));
             const response = await axios.post('http://localhost:3000/admin/courses/', {
                 title,
                 description,

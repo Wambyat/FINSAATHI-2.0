@@ -12,6 +12,7 @@ import B4P1 from './components/B4P1';
 import B4P2 from './components/B4P2';
 import B4P3 from './components/B4P3';
 import AdminLogin from "./components/AdminLogin";
+import AdminRegister from "./components/AdminRegister";
 
 function App() {
     return (
@@ -21,7 +22,7 @@ function App() {
                 <Route path="/login" element={<Login/>}/>
                 <Route path={"/AdminLogin"} element={<AdminLogin/>}/>
                 <Route path="/register" element={<Register/>}/>
-                <Route path="/AdminRegister" element={<Register/>}/>
+                <Route path="/AdminRegister" element={<AdminRegister/>}/>
                 <Route path="/CreateCourse" element={<CreateCourse/>}/>
                 <Route path="/FinancialKnowledgeLevel" element={<FinancialKnowledgeLevel/>}/>
                 <Route path="/KnowledgeTest" element={<KnowledgeTest/>}/>

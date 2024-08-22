@@ -87,9 +87,11 @@ const authenticateJwt = (req, res, next) => {
         const token = authHeader.split(' ')[1];
         jwt.verify(token, SECRET, (err, user) => {
             if (err) {
+                console.log(err);
                 return res.sendStatus(403);
             }
             req.user = user;
+            req.role = user.role;
             next();
         });
     } else {
@@ -105,8 +107,8 @@ mongoose.connect('mongodb+srv://sohoxic:iisc@deez-nu.eyz6xx9.mongodb.net/', {
 
 
 // Admin login and signup routes
-app.post('/admin/signup', (req, res) => {
-    const {username, password} = req.body;
+app.post('/admin/signup', authenticateJwt, (req, res) => {
+    const {username, email, password} = req.body;
 
     function callback(admin) {
         if (admin) {
@@ -132,6 +134,15 @@ app.post('/admin/login', async (req, res) => {
         res.json({message: 'Logged in successfully', token});
     } else {
         res.status(403).json({message: 'Invalid username or password'});
+    }
+});
+
+app.get('/admin/check', authenticateJwt, (req, res) => {
+    if(req.role === 'admin') {
+        res.json({message: 'Admin is authenticated', isAdmin: true});
+    }
+    else {
+        res.status(403).json({message: 'Admin is not authenticated', isAdmin: false});
     }
 });
 
@@ -282,7 +293,6 @@ app.get('user/courses/:courseId', authenticateJwt, async (req, res) => {
 
 app.post('/users/courses/:courseId', authenticateJwt, async (req, res) => {
     const course = await Course.findById(req.params.courseId);
-    console.log(course);
     if (course) {
         const user = await User.findOne({username: req.user.username});
         if (user) {
@@ -323,7 +333,6 @@ app.get('/courses/:courseId/quizzes', async (req, res) => {
 app.post('/suggestedLanguage', async (req, res) => {
     // get the first account number and key in the database
     const location = await Location.findOne({});
-    console.log(location);
     const account_number = location.account_number;
     const key = location.key;
     const ip = req.body.ip;
