@@ -41,11 +41,16 @@ body, html {
     justify-content: flex-start;
     background: white;
     padding: 20px;
+    padding-left: 40px; /* Increased padding for better content fit */
+    padding-right: 40px; /* Increased padding for better content fit */
+    max-width: 100%; /* Ensure the panel does not exceed the viewport width */
+    box-sizing: border-box; /* Includes padding and border in the element's width and height */
+    overflow-x: hidden; /* Hide horizontal overflow */
     overflow-y: auto; /* Enable vertical scrolling */
 }
 
 /* Content styles */
-.content {
+.content-landing {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,19 +87,19 @@ body, html {
 
 /* Right panel styles */
 .authentication-info {
-    margin-bottom: 20px;
+    margin-bottom: 100px;
     width: 100%;
 }
 
 .authentication-info h2 {
-    font-size: 2.0em; /* Increased font size for emphasis */
+    font-size: 2em; /* Adjusted font size for better fit */
     color: #333;
     margin-bottom: 10px;
     text-align: center;
 }
 
 .authentication-info p {
-    font-size: 1.0em;
+    font-size: 1.2em;
     color: #666;
     margin-bottom: 15px;
     text-align: center;
@@ -111,6 +116,8 @@ body, html {
     color: #666;
     margin-bottom: 10px;
     line-height: 1.5;
+    word-wrap: break-word; /* Forces long words to wrap onto the next line */
+    white-space: normal; /* Allows text to wrap normally */
 }
 
 .authentication-info li strong {
@@ -120,7 +127,7 @@ body, html {
 /* Right panel header styles */
 .right-panel h1 {
     margin-bottom: 20px;
-    font-size: 2.5em; /* Increased font size */
+    font-size: 2em; /* Adjusted font size for better fit */
     color: #333;
     text-align: center;
 }
@@ -157,7 +164,7 @@ body, html {
 }
 
 .about-section p {
-    font-size: 0.9em;
+    font-size: 1.2em;
     color: #333;
     max-width: 800px;
     margin: 0 auto;
