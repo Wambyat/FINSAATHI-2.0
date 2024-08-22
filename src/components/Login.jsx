@@ -19,10 +19,9 @@ function Login() {
         try {
             const response = await axios.post('http://localhost:3000/users/login/', data);
             console.log('Login successful:', response.data);
-            // automatically go to /FinancialKnowledgeLevel
             setSuccessMessage("Logged in Successfully as "+data.username+". Taking you to your dashboard.");
             setTimeout(() => {
-                window.location.href = "/FinancialKnowledgeLevel";
+                window.location.href = "/KnowledgeTest";
             }, 1500);
             // Handle successful login (e.g., store token, redirect)
         } catch (error) {
