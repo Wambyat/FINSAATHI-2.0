@@ -17,7 +17,7 @@ const BasicUnit4 = () => {
       }
     };
 
-    const simulatedHindiTranslation = "पाठ 1: अधिशेष, घाटा और कुल संपत्ति को समझना";
+    const simulatedHindiTranslation = "पाठ 1   अधिशेष, घाटा और कुल संपत्ति को समझना";
     setHindiTranslation(simulatedHindiTranslation);
   }, []);
 
