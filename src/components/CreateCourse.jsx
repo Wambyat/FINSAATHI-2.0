@@ -8,6 +8,7 @@ function CreateCourse() {
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
     const [imageLink, setImageLink] = useState("");
+    const [message, setMessage] = useState("");
 
     const handleCreateCourse = async () => {
         try {
@@ -21,12 +22,15 @@ function CreateCourse() {
                 imageLink,
                 published: true
             });
-
+            setMessage("Course created successfully");
             console.log(response.data);
             setTitle("");
             setDescription("");
             setPrice("");
             setImageLink("");
+            setTimeout(() => {
+                window.location.href = "/CreateCourse";
+            }, 1500);
         } catch (error) {
             console.error('Error creating course:', error.message);
         }
@@ -35,6 +39,7 @@ function CreateCourse() {
     return (
         <div>
             <h1>Create Course Page</h1>
+            {message && <p>{message}</p>}
             <input type="text" value={title} onChange={e => setTitle(e.target.value)} placeholder="Title"/>
             <input type="text" value={description} onChange={e => setDescription(e.target.value)}
                    placeholder="Description"/>

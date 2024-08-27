@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./AdminAddQuiz.css";
 import axios from "axios";
 
+import {useAdminAuthRedirect} from "../hooks/AuthRedirect";
+
 function AdminAddQuiz() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -19,12 +21,15 @@ function AdminAddQuiz() {
     e.preventDefault();
     setErrorMessage(null);
     setSuccessMessage(null);
+    setQuestions(questions.slice(1)); // Remove the empty question object at the start
     const data = {
       title,
       description,
       questions
     };
     try {
+      const token = localStorage.getItem('token');
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       const response = await axios.post('http://localhost:3000/admin/quizzes/', data);
       setSuccessMessage("Quiz added successfully");
     } catch (error) {
@@ -33,13 +38,21 @@ function AdminAddQuiz() {
   };
 
   const handleAddQuestion = () => {
-    setQuestions([...questions, {
-      question: "",
-      imageLink: "",
-      options: [{ optionId: 0, option: "" }],
-      correctAnswer: 0
-    }]);
+    const newQuestion = {
+      question: document.querySelector('input[name="question"]').value,
+      imageLink: document.querySelector('input[name="imageLink"]').value,
+      options: [
+        { optionId: 1, option: document.querySelector('input[name="option1"]').value },
+        { optionId: 2, option: document.querySelector('input[name="option2"]').value },
+        { optionId: 3, option: document.querySelector('input[name="option3"]').value },
+        { optionId: 4, option: document.querySelector('input[name="option4"]').value }
+      ],
+      correctAnswer: parseInt(document.querySelector('input[name="correctOption"]').value)
+    };
+
+    setQuestions([...questions, newQuestion]);
     setQuestionMessage("Added question.");
+
     // Clear the question-related text boxes
     document.querySelectorAll('input[name="question"], input[name="imageLink"], input[name^="option"], input[name="correctOption"]').forEach(input => input.value = "");
   };

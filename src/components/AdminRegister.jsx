@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import "./AdminRegister.css";
 import axios from "axios";
+import {useAdminAuthRedirect} from "../hooks/AuthRedirect";
 
 function AdminRegister() {
     const [name, setName] = useState("");
@@ -21,6 +22,8 @@ function AdminRegister() {
             password: password
         };
         try {
+            const token = localStorage.getItem('token');
+            axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             const response = await axios.post('http://localhost:3000/admin/signup/', data);
             console.log('Registration successful:', response.data);
             setSuccessMessage("Registered and logged in as " + data.username + ". Taking you to your dashboard.");
