@@ -34,6 +34,15 @@ const courseSchema = new mongoose.Schema({
     quizzes: [{type: mongoose.Schema.Types.ObjectId, ref: 'Quiz'}]
 });
 
+const unitSchema = new mongoose.Schema({
+    title: String,
+    description: String,
+    price: Number,
+    imageLink: String,
+    published: Boolean,
+    courses: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}]
+});
+
 const lessonSchema = new mongoose.Schema({
     title: String,
     description: String,
@@ -74,6 +83,7 @@ const locationSchema = new mongoose.Schema({
 // Define mongoose models
 const User = mongoose.model('User', userSchema);
 const Admin = mongoose.model('Admin', adminSchema);
+const Unit = mongoose.model('Unit', unitSchema);
 const Course = mongoose.model('Course', courseSchema);
 const Lesson = mongoose.model('Lesson', lessonSchema);
 const Quiz = mongoose.model('Quiz', quizSchema);
