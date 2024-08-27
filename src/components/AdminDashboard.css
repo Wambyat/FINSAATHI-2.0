@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, rgba(238, 170, 163, 1.0), rgba(254, 247, 246, 1.0));
+  }
+  
+  .container {
+    width: 300%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Space between container and next button */
+    margin-top: 5vh;
+  }
+  
+  .level {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+    color: #d22626; /* Red color */
+    font-size: 3.0rem;
+    margin: 0;
+  }
+  
+  .select-unit {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #d22626; /* Red color */
+  }
+  
+  .buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px; /* Spacing between buttons */
+  }
+  
+  .unit-button {
+    background-color: #f56c6c;
+    color: white;
+    border: none;
+    padding: 30px 60px; /* Increased padding for larger buttons */
+    font-size: 2.2rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 45%; /* Ensures two buttons per row */
+    text-align: center;
+  }
+  
+  .unit-button:hover {
+    background-color: #e05555;
+  }
+  
+  .next-button {
+    background-color: #f56c6c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.8rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; /* Space between the container and the button */
+    align-self: center; /* Centers the button below the container */
+  }
+  
+  .next-button:hover {
+    background-color: #e05555;
+  }
+  
+  /* Media Queries for Responsiveness */
+  @media (max-width: 991px) {
+    .level {
+      font-size: 2rem;
+    }
+    .select-unit {
+      font-size: 1.5rem;
+    }
+    .unit-button {
+      font-size: 1.3rem;
+      padding: 15px 30px;
+      width: 100%; /* Stack buttons vertically on smaller screens */
+    }
+    .next-button {
+      font-size: 1.3rem;
+      padding: 8px 18px;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .level {
+      font-size: 1.75rem;
+    }
+    .select-unit {
+      font-size: 1.3rem;
+    }
+    .unit-button {
+      font-size: 1.1rem;
+      padding: 12px 25px;
+      width: 100%; /* Stack buttons vertically on smaller screens */
+    }
+    .next-button {
+      font-size: 1.1rem;
+      padding: 8px 16px;
+    }
+  }
+  
+  @media (max-width: 575px) {
+    .level {
+      font-size: 1.5rem;
+    }
+    .select-unit {
+      font-size: 1.1rem;
+    }
+    .unit-button {
+      font-size: 1rem;
+      padding: 10px 20px;
+      width: 100%; /* Stack buttons vertically on smaller screens */
+    }
+    .next-button {
+      font-size: 1rem;
+      padding: 6px 12px;
+    }
+  }
+  

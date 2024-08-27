@@ -1,19 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import "./AdminLogin.css";
 import axios from 'axios';
 
-function Login() {
+function AdminLogin() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [errorMessage, setErrorMessage] = useState(null);
     const [successMessage, setSuccessMessage] = useState(null);
+    const navigate = useNavigate(); // Initialize useNavigate
 
     const handleLogin = async (e) => {
         e.preventDefault();
         setErrorMessage(null); // Clear any previous errors
         setSuccessMessage(null); // Clear any previous success messages
         const data = {
-            username:email,
+            username: email,
             password: password
         };
         try {
@@ -21,9 +23,9 @@ function Login() {
             console.log('Login successful:', response.data);
             localStorage.setItem('token', response.data.token);
             console.log('Token:', localStorage.getItem('token'));
-            setSuccessMessage("Logged in Successfully as "+data.username+". Taking you to your dashboard.");
+            setSuccessMessage("Logged in Successfully as " + data.username + ". Taking you to your dashboard.");
             setTimeout(() => {
-                window.location.href = "/CreateCourse";
+                navigate('/AdminDashboard'); // Navigate to Admin Dashboard
             }, 1500);
         } catch (error) {
             console.error('Login error:', error.response.data);
@@ -38,15 +40,16 @@ function Login() {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {successMessage && <p className="success-message">{successMessage}</p>}
             <label>Email</label>
-            <input type="text" onChange={e => setEmail(e.target.value)}/>
+            <input type="text" onChange={e => setEmail(e.target.value)} />
             <br/>
             <label>Password</label>
-            <input type="password" onChange={e => setPassword(e.target.value)}/>
+            <input type="password" onChange={e => setPassword(e.target.value)} />
             <br/>
             <button onClick={handleLogin}>Login</button>
             <br/>
+            <h2>New here? <a href="/AdminRegister">Register</a></h2>
         </div>
     );
 }
 
-export default Login;
+export default AdminLogin;

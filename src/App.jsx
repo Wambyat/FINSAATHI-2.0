@@ -14,6 +14,7 @@ import B4P3 from './components/B4P3';
 import AdminLogin from "./components/AdminLogin";
 import AdminRegister from "./components/AdminRegister";
 import AdminAddQuiz from "./components/AdminAddQuiz";
+import AdminDashboard from "./components/AdminDashboard";
 
 function App() {
     return (
@@ -34,6 +35,10 @@ function App() {
                 <Route path="/B4P1" element={<B4P1/>} />
                 <Route path="/B4P2" element={<B4P2/>} />
                 <Route path="/B4P3" element={<B4P3/>} />
+                <Route path="/AdminLogin" element={<AdminLogin/>} />
+                <Route path="/AdminRegister" element={<AdminRegister/>} />
+                <Route path="/AdminAddQuiz" element={<AdminAddQuiz/>} />
+                <Route path="/AdminDashboard" element={<AdminDashboard/>} />
             </Routes>
         </Router>
     );
