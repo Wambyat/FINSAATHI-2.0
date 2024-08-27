@@ -5,6 +5,7 @@ import axios from "axios";
 import {useAdminAuthRedirect} from "../hooks/AuthRedirect";
 
 function AdminRegister() {
+    useAdminAuthRedirect();
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

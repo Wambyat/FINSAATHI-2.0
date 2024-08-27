@@ -5,6 +5,7 @@ import axios from "axios";
 import {useAdminAuthRedirect} from "../hooks/AuthRedirect";
 
 function AdminAddQuiz() {
+  useAdminAuthRedirect();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [questions, setQuestions] = useState([{
