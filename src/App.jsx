@@ -13,6 +13,7 @@ import B4P2 from './components/B4P2';
 import B4P3 from './components/B4P3';
 import AdminLogin from "./components/AdminLogin";
 import AdminRegister from "./components/AdminRegister";
+import AdminAddQuiz from "./components/AdminAddQuiz";
 
 function App() {
     return (
@@ -20,10 +21,11 @@ function App() {
             <Routes>
                 <Route path="/" element={<Landing/>}/>
                 <Route path="/login" element={<Login/>}/>
-                <Route path={"/AdminLogin"} element={<AdminLogin/>}/>
+                <Route path="/AdminLogin" element={<AdminLogin/>}/>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/AdminRegister" element={<AdminRegister/>}/>
                 <Route path="/CreateCourse" element={<CreateCourse/>}/>
+                <Route path="/AdminAddQuiz" element={<AdminAddQuiz/>}/>
                 <Route path="/FinancialKnowledgeLevel" element={<FinancialKnowledgeLevel/>}/>
                 <Route path="/KnowledgeTest" element={<KnowledgeTest/>}/>
                 <Route path="/BasicLevelUnits" element={<BasicLevelUnits/>}/>

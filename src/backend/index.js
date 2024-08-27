@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
     username: String,
     email: String,
     password: String,
-    purchasedCourses: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}]
+    startedCourses: [{type: mongoose.Schema.Types.ObjectId, ref: 'Course'}]
 });
 
 const adminSchema = new mongoose.Schema({
@@ -279,9 +279,9 @@ app.post('/users/login/', async (req, res) => {
 // User course routes
 app.get('/users/courses', authenticateJwt, async (req, res) => {
     try {
-        const user = await User.findOne({username: req.user.username}).populate('purchasedCourses');
+        const user = await User.findOne({username: req.user.username}).populate('startedCourses');
         if (user) {
-            res.json({purchasedCourses: user.purchasedCourses || []});
+            res.json({startedCourses: user.startedCourses || []});
         } else {
             res.status(403).json({message: 'User not found'});
         }
@@ -292,7 +292,7 @@ app.get('/users/courses', authenticateJwt, async (req, res) => {
 
 app.get('user/courses/:courseId', authenticateJwt, async (req, res) => {
     // Check if user has purchased the course
-    const user = await User.findOne({username: req.user.username}).populate('purchasedCourses');
+    const user = await User.findOne({username: req.user.username}).populate('startedCourses');
     const course = await Course.findById(req.params.courseId);
     if (course) {
         res.json({course});
@@ -306,7 +306,7 @@ app.post('/users/courses/:courseId', authenticateJwt, async (req, res) => {
     if (course) {
         const user = await User.findOne({username: req.user.username});
         if (user) {
-            user.purchasedCourses.push(course);
+            user.startedCourses.push(course);
             await user.save();
             res.json({message: 'Course purchased successfully'});
         } else {
