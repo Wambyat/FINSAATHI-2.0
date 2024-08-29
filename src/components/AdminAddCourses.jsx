@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./AdminAddCourses.css";
 import axios from "axios";
+import {useAdminAuthRedirect} from "../hooks/AuthRedirect";
 
 function AdminAddCourses() {
   
+  useAdminAuthRedirect();
   const [level, setLevel] = useState("");
   const [title, setTitle] = useState("");
   const [lessonNumber, setLessonNumber] = useState("");
@@ -41,7 +43,7 @@ function AdminAddCourses() {
         {successMessage && <p className="success-message">{successMessage}</p>}
         
         <label>Level</label>
-        <select value={level} onChange={e => setLevel(e.target.value)}>
+        <select className="select" value={level} onChange={e => setLevel(e.target.value)}>
           <option value="">Select Level</option>
           <option value="Basic">Basic</option>
           <option value="Advanced">Advanced</option>
@@ -63,3 +65,4 @@ function AdminAddCourses() {
 }
 
 export default AdminAddCourses;
+
