@@ -45,7 +45,7 @@ function Login() {
             <br/>
             <button onClick={handleLogin}>Login</button>
             <br/>
-            <h2>New here? <a href="/register">Register</a></h2>
+            <h2>New here? <a href="/Register">Register</a></h2>
         </div>
     );
 }

@@ -15,6 +15,7 @@ import AdminLogin from "./components/AdminLogin";
 import AdminRegister from "./components/AdminRegister";
 import AdminAddQuiz from "./components/AdminAddQuiz";
 import AdminDashboard from "./components/AdminDashboard";
+import AdminAddCourses from "./components/AdminAddCourses";
 
 function App() {
     return (
@@ -39,6 +40,7 @@ function App() {
                 <Route path="/AdminRegister" element={<AdminRegister/>} />
                 <Route path="/AdminAddQuiz" element={<AdminAddQuiz/>} />
                 <Route path="/AdminDashboard" element={<AdminDashboard/>} />
+                <Route path="/AdminAddCourses" element={<AdminAddCourses/>} />
             </Routes>
         </Router>
     );

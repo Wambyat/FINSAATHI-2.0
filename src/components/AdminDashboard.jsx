@@ -2,14 +2,16 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./AdminDashboard.css";
 
-function AdminDasboard() {
+function AdminDashboard() {
   const [selectedUnit, setSelectedUnit] = useState(null);
   const navigate = useNavigate();
 
   const handleUnitClick = (unit) => {
     setSelectedUnit(unit);
     if (unit === 'Courses') {
-      navigate('/AdminAddQuiz'); // Navigate to AdminAddQuiz.jsx
+      navigate('/AdminAddCourses'); // Navigate to AdminAddCourses
+    } else if (unit === 'Quizes') {
+      navigate('/AdminAddQuiz'); // Navigate to AdminAddQuiz
     } else {
       navigate(`/${unit.toLowerCase().replace(/\s+/g, '')}`);
     }
@@ -23,9 +25,11 @@ function AdminDasboard() {
         <button className="unit-button" onClick={() => handleUnitClick('Admin Users')}>Admin Users</button>
         <button className="unit-button" onClick={() => handleUnitClick('End Users')}>End Users</button>
         <button className="unit-button" onClick={() => handleUnitClick('Courses')}>Courses</button>
+        <button className="unit-button" onClick={() => handleUnitClick('Quizes')}>Quizes</button>
       </div>
     </div>
   );
 }
 
-export default AdminDasboard;
+export default AdminDashboard;
+
