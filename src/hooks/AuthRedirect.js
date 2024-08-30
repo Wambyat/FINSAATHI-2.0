@@ -14,7 +14,7 @@ function useAuthRedirect() {
 
 function useAdminAuthRedirect() {
     const navigate = useNavigate();
-    useEffect( () => {
+    useEffect(() => {
         async function checkToken() {
             const token = localStorage.getItem('token');
             axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
@@ -30,6 +30,7 @@ function useAdminAuthRedirect() {
                 navigate("/Login");
             }
         }
+
         checkToken().then(r => console.log('Admin check complete'));
     }, [navigate]);
 }

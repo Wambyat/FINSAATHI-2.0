@@ -10,10 +10,12 @@ The SAATHI Financial Literacy website is an educational platform tailored for in
 Languages Supported: English, Hindi and various other regional languages.
 
 We have used the following technologies to build the website:
+
 - Frontend: HTML, CSS, JavaScript, Tailwind, ReactJS
 - Backend: NodeJS, ExpressJS, MongoDB
 - Deployment: Vercel
 
 > [!CAUTION]
-> The vercel deployment **DOES NOT** have the express server included. The backend is not deployed on vercel. It should be updated to include the backend as well.
+> The vercel deployment **DOES NOT
+** have the express server included. The backend is not deployed on vercel. It should be updated to include the backend as well.
 

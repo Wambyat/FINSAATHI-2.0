@@ -32,15 +32,15 @@ function App() {
                 <Route path="/KnowledgeTest" element={<KnowledgeTest/>}/>
                 <Route path="/BasicLevelUnits" element={<BasicLevelUnits/>}/>
                 <Route path="/AdvancedLevelUnits" element={<AdvancedLevelUnits/>}/>
-                <Route path="/BasicUnit4" element={<BasicUnit4/>} />
-                <Route path="/B4P1" element={<B4P1/>} />
-                <Route path="/B4P2" element={<B4P2/>} />
-                <Route path="/B4P3" element={<B4P3/>} />
-                <Route path="/AdminLogin" element={<AdminLogin/>} />
-                <Route path="/AdminRegister" element={<AdminRegister/>} />
-                <Route path="/AdminAddQuiz" element={<AdminAddQuiz/>} />
-                <Route path="/AdminDashboard" element={<AdminDashboard/>} />
-                <Route path="/AdminAddCourses" element={<AdminAddCourses/>} />
+                <Route path="/BasicUnit4" element={<BasicUnit4/>}/>
+                <Route path="/B4P1" element={<B4P1/>}/>
+                <Route path="/B4P2" element={<B4P2/>}/>
+                <Route path="/B4P3" element={<B4P3/>}/>
+                <Route path="/AdminLogin" element={<AdminLogin/>}/>
+                <Route path="/AdminRegister" element={<AdminRegister/>}/>
+                <Route path="/AdminAddQuiz" element={<AdminAddQuiz/>}/>
+                <Route path="/AdminDashboard" element={<AdminDashboard/>}/>
+                <Route path="/AdminAddCourses" element={<AdminAddCourses/>}/>
             </Routes>
         </Router>
     );
