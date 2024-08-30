@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from "react";
+import {useNavigate} from 'react-router-dom';
 import "./AdminLogin.css";
 import axios from 'axios';
 
@@ -40,10 +40,10 @@ function AdminLogin() {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {successMessage && <p className="success-message">{successMessage}</p>}
             <label>Email</label>
-            <input type="text" onChange={e => setEmail(e.target.value)} />
+            <input type="text" onChange={e => setEmail(e.target.value)}/>
             <br/>
             <label>Password</label>
-            <input type="password" onChange={e => setPassword(e.target.value)} />
+            <input type="password" onChange={e => setPassword(e.target.value)}/>
             <br/>
             <button onClick={handleLogin}>Login</button>
             <br/>

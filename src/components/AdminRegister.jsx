@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import React, {useState} from "react";
+import {useNavigate} from 'react-router-dom';
 import "./AdminRegister.css";
 import axios from "axios";
 import {useAdminAuthRedirect} from "../hooks/AuthRedirect";
@@ -44,13 +44,13 @@ function AdminRegister() {
             {errorMessage && <p className="error-message">{errorMessage}</p>}
             {successMessage && <p className="success-message">{successMessage}</p>}
             <label>Name</label>
-            <input type="text" onChange={e => setName(e.target.value)} />
+            <input type="text" onChange={e => setName(e.target.value)}/>
             <br/>
             <label>Email</label>
-            <input type="text" onChange={e => setEmail(e.target.value)} />
+            <input type="text" onChange={e => setEmail(e.target.value)}/>
             <br/>
             <label>Password</label>
-            <input type="password" onChange={e => setPassword(e.target.value)} />
+            <input type="password" onChange={e => setPassword(e.target.value)}/>
             <br/>
             <button onClick={handleRegister}>Register</button>
             <br/>

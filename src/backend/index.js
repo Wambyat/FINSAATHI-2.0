@@ -148,10 +148,9 @@ app.post('/admin/login', async (req, res) => {
 });
 
 app.get('/admin/check', authenticateJwt, (req, res) => {
-    if(req.role === 'admin') {
+    if (req.role === 'admin') {
         res.json({message: 'Admin is authenticated', isAdmin: true});
-    }
-    else {
+    } else {
         res.status(403).json({message: 'Admin is not authenticated', isAdmin: false});
     }
 });
