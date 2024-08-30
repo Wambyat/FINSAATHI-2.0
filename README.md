@@ -1,6 +1,7 @@
 # Website Saathi
 
-> [!NOTE]  
+> [!NOTE]
+> Check the [GitHub Project.](https://github.com/users/aneela1516/projects/1)
 > Run `runner.sh` to start the front end and backend.
 
 > [!IMPORTANT]
