@@ -14,7 +14,7 @@ function Register() {
         setErrorMessage(null); // Clear any previous errors
         setSuccessMessage(null); // Clear any previous success messages
         const data = {
-            username:name,
+            username: name,
             email: email,
             password: password
         };
@@ -22,7 +22,7 @@ function Register() {
             const response = await axios.post('http://localhost:3000/users/signup/', data);
             console.log('Login successful:', response.data);
             // automatically go to /FinancialKnowledgeLevel
-            setSuccessMessage("Registered and logged in in Successfully as "+data.username+". Taking you to your dashboard.");
+            setSuccessMessage("Registered and logged in in Successfully as " + data.username + ". Taking you to your dashboard.");
             setTimeout(() => {
                 window.location.href = "/FinancialKnowledgeLevel";
             }, 1500);

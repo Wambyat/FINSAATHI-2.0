@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Typography } from '@mui/material';
+import React, {useState} from 'react';
+import {Box, Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Typography} from '@mui/material';
 import FinancialKnowledgeLevel from './FinancialKnowledgeLevel';
 import './KnowledgeTest.css';
 
@@ -91,12 +91,12 @@ const KnowledgeTest = () => {
     return (
         <div className="knowledge-test-wrapper">
             {isTestComplete ? (
-                <FinancialKnowledgeLevel score={score} />
+                <FinancialKnowledgeLevel score={score}/>
             ) : (
                 <>
-                    <Typography variant="h3" className="knowledge-test-header" style={{ fontWeight: 'bold' }}>
-    KNOWLEDGE TEST
-</Typography>
+                    <Typography variant="h3" className="knowledge-test-header" style={{fontWeight: 'bold'}}>
+                        KNOWLEDGE TEST
+                    </Typography>
                     <Box className="knowledge-test-container">
                         <Typography className="question-counter">
                             {currentQuestion + 1}/{questions.length}
@@ -104,7 +104,7 @@ const KnowledgeTest = () => {
                         <Box className="question-area">
                             <FormControl component="fieldset">
                                 <FormLabel component="legend"
-                                    sx={{ fontSize: '2.2rem' }}>{questions[currentQuestion].question}</FormLabel>
+                                           sx={{fontSize: '2.2rem'}}>{questions[currentQuestion].question}</FormLabel>
                                 <RadioGroup
                                     aria-label="question"
                                     name="question"
@@ -116,7 +116,7 @@ const KnowledgeTest = () => {
                                             key={index}
                                             value={answer}
                                             control={<Radio
-                                                className={answer === selectedAnswer ? 'answer-button-selected' : 'answer-button'} />}
+                                                className={answer === selectedAnswer ? 'answer-button-selected' : 'answer-button'}/>}
                                             label={<Typography sx={{
                                                 fontSize: '2.1rem',
                                                 color: answer === selectedAnswer ? 'red' : 'gray'

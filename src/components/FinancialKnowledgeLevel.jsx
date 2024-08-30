@@ -1,8 +1,8 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import './FinancialKnowledgeLevel.css';
 
-const FinancialKnowledgeLevel = ({ score }) => {
+const FinancialKnowledgeLevel = ({score}) => {
     const navigate = useNavigate();
 
     const handleBasicLevelClick = () => {
@@ -16,7 +16,7 @@ const FinancialKnowledgeLevel = ({ score }) => {
     return (
         <div>
             <div className="container">
-            <h1>FINANCIAL KNOWLEDGE LEVEL</h1>
+                <h1>FINANCIAL KNOWLEDGE LEVEL</h1>
                 <div className="test-score">Test Score: {score}/10</div>
                 <div className="start-learning">
                     {score > 8 ? 'Choose Advanced Level And Start Learning' : 'Choose Basic Level And Start Learning'}

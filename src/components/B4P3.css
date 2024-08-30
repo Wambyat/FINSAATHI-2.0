@@ -7,9 +7,9 @@ body {
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(to right, rgba(238, 170, 163, 1.0), rgba(254, 247, 246, 1.0));
-  }
-  
-  .lesson-page {
+}
+
+.lesson-page {
     width: 100%;
     max-width: 800px;
     display: flex;
@@ -17,21 +17,21 @@ body {
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-  }
-  
-  .header {
+}
+
+.header {
     text-align: center;
     width: 100%;
     padding: 10px 0;
-  }
-  
-  .header h1 {
+}
+
+.header h1 {
     color: #d22626; /* Red color */
     font-size: 2.5rem;
     margin: 0;
-  }
-  
-  .content {
+}
+
+.content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,21 +43,21 @@ body {
     background-color: white;
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .content p {
+}
+
+.content p {
     font-size: 2.5rem;
     line-height: 1.6;
     margin-bottom: 20px;
-  }
-  
-  .tts-controls {
+}
+
+.tts-controls {
     display: flex;
     gap: 15px; /* Add space between buttons */
     margin-top: 10px;
-  }
-  
-  .tts-button {
+}
+
+.tts-button {
     background-color: #f56c6c;
     color: white;
     border: none;
@@ -66,21 +66,21 @@ body {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .tts-button:hover {
+}
+
+.tts-button:hover {
     background-color: #e05555;
-  }
-  
-  .footer {
+}
+
+.footer {
     width: 100%;
     display: flex;
     justify-content: flex-end; /* Aligns the button to the right */
     padding: 10px 0;
     margin-top: 20px;
-  }
-  
-  .next-button {
+}
+
+.next-button {
     background-color: #f56c6c;
     color: white;
     border: none;
@@ -89,54 +89,62 @@ body {
     border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .next-button:hover {
+}
+
+.next-button:hover {
     background-color: #e05555;
-  }
-  
-  /* Media Queries for Responsiveness */
-  @media (max-width: 991px) {
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 991px) {
     .header h1 {
-      font-size: 2rem;
+        font-size: 2rem;
     }
+
     .content p {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
+
     .next-button, .tts-button {
-      font-size: 1.3rem;
-      padding: 8px 18px;
+        font-size: 1.3rem;
+        padding: 8px 18px;
     }
-  }
-  
-  @media (max-width: 767px) {
+}
+
+@media (max-width: 767px) {
     .header h1 {
-      font-size: 1.75rem;
+        font-size: 1.75rem;
     }
+
     .content p {
-      font-size: 1.3rem;
+        font-size: 1.3rem;
     }
+
     .next-button, .tts-button {
-      font-size: 1.1rem;
-      padding: 8px 16px;
+        font-size: 1.1rem;
+        padding: 8px 16px;
     }
+
     .content {
-      padding: 20px;
+        padding: 20px;
     }
-  }
-  
-  @media (max-width: 575px) {
+}
+
+@media (max-width: 575px) {
     .header h1 {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
+
     .content p {
-      font-size: 1.1rem;
+        font-size: 1.1rem;
     }
+
     .next-button, .tts-button {
-      font-size: 1rem;
-      padding: 6px 12px;
+        font-size: 1rem;
+        padding: 6px 12px;
     }
+
     .content {
-      padding: 15px;
+        padding: 15px;
     }
-  }
+}
