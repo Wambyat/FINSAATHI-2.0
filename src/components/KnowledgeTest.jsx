@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Box, Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Typography } from '@mui/material';
 import FinancialKnowledgeLevel from './FinancialKnowledgeLevel';
 import './KnowledgeTest.css';
-//!TODO
+
 const KnowledgeTest = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedAnswer, setSelectedAnswer] = useState('');
@@ -94,9 +94,9 @@ const KnowledgeTest = () => {
                 <FinancialKnowledgeLevel score={score} />
             ) : (
                 <>
-                    <Typography variant="h3" className="knowledge-test-header">
-                        KNOWLEDGE TEST
-                    </Typography>
+                    <Typography variant="h3" className="knowledge-test-header" style={{ fontWeight: 'bold' }}>
+    KNOWLEDGE TEST
+</Typography>
                     <Box className="knowledge-test-container">
                         <Typography className="question-counter">
                             {currentQuestion + 1}/{questions.length}
